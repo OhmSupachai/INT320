@@ -14,47 +14,45 @@ import java.util.Scanner;
  */
 public class BigOsample {
 
-    private static final int N = 1_000;
+    private static final int N = 100_000;
     static Random r = new Random();
 
     public static void main(String[] args) {
 
-        int[] ary = new int[N];
-        for (int i = 0; i < ary.length; i++) {
-            ary[i] = r.nextInt();
-
-        }
+//        int[] ary = new int[N];
+//        for (int i = 0; i < ary.length; i++) {
+//            ary[i] = r.nextInt();
+//
+//        }
+       
         int n, temp;
         Scanner s = new Scanner(System.in);
         System.out.print("Enter no. of elements you want in array:");
         n = s.nextInt();
         int a[] = new int[n];
         System.out.println("Enter all the elements:");
-        for (int i = 0; i < n; i++) 
-        {
-            a[i] = s.nextInt();
+         
+        for (int i = 0; i < N; i++) {
+            a[i] = r.nextInt();
         }
-        for (int i = 0; i < n; i++) 
-        {
-            for (int j = i + 1; j < n; j++) 
-            {
-                if (a[i] > a[j]) 
-                {
+        long begin = System.currentTimeMillis();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i] > a[j]) {
                     temp = a[i];
                     a[i] = a[j];
                     a[j] = temp;
                 }
             }
-        }
-        long begin = System.currentTimeMillis();
+        }      
+
+        System.out.println((System.currentTimeMillis()- begin));
+        long begin2 = System.currentTimeMillis();
+        Arrays.sort(a);
+         System.out.println((System.currentTimeMillis()- begin2));
         
-        System.out.println((System.currentTimeMillis()
-              ));
-        
-        Arrays.sort(ary);
-        
+
     }
-    
+
 //https://www.sanfoundry.com/java-program-sort-array-ascending-order/
-   
 }

@@ -50,6 +50,9 @@ public class BigOsample {
         
         System.out.println((System.currentTimeMillis()
               ));
+        
+        Arrays.sort(ary);
+        
     }
     
 //https://www.sanfoundry.com/java-program-sort-array-ascending-order/
